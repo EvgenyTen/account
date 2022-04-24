@@ -1,4 +1,4 @@
-package ru.iteco.account.homeworkTwo;
+package ru.iteco.homeworkTwo;
 
 public interface Process {
     boolean run(ExternalInfo externalInfo);

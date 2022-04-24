@@ -1,4 +1,4 @@
-package ru.iteco.account.homeworkTwo;
+package ru.iteco.homeworkTwo;
 
 import org.springframework.stereotype.Component;
 

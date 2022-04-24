@@ -1,4 +1,4 @@
-package ru.iteco.account.homeworkTwo;
+package ru.iteco.homeworkTwo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -22,6 +22,6 @@ public class HomeworkAspects {
         log.info("After all methods in service::FINISH {}", joinPoint.getSignature().toShortString());
     }
 
-    @Pointcut("within(ru.iteco.account.homeworkTwo.service.*)")
+    @Pointcut("within(ru.iteco.homeworkTwo.service.*)")
     public void allMethods() {}
 }
