@@ -1,7 +1,8 @@
-package ru.iteco.homeworkTwo;
+package ru.iteco.account.homeworkTwo.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import ru.iteco.account.homeworkTwo.Process;
 
 @Slf4j
 public class ExternalInfoProcess implements Process {

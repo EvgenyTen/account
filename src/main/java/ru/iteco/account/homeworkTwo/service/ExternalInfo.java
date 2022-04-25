@@ -1,4 +1,4 @@
-package ru.iteco.homeworkTwo;
+package ru.iteco.account.homeworkTwo.service;
 
 import lombok.Getter;
 
@@ -15,8 +15,6 @@ public class ExternalInfo {
     @Override
     public String toString() {
         return "ExternalInfo{" +
-                "id=" + id +
-                ", info='" + info + '\'' +
-                '}';
+                "id=" + id + ", info=" + info + "\"" + "}";
     }
 }

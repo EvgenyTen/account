@@ -1,8 +1,9 @@
-package ru.iteco.homeworkTwo;
+package ru.iteco.account.homeworkTwo.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import ru.iteco.account.homeworkTwo.CacheResult;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -35,8 +36,8 @@ public class ExternalServiceImpl implements ExternalService {
 
     @PreDestroy
     public void destroy() {
-        log.info("Map before:  {}", externalInfoMap);
+        log.info("Map before clear:  {}", externalInfoMap);
         externalInfoMap.clear();
-        log.info("Map after:  {}", externalInfoMap);
+        log.info("Map after clear:  {}", externalInfoMap);
     }
 }
