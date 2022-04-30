@@ -1,4 +1,4 @@
-package ru.iteco.account.homeworkTwo.service;
+package ru.iteco.account.homeworkTwo;
 
 import lombok.Getter;
 

@@ -18,10 +18,10 @@ import java.util.concurrent.ConcurrentHashMap;
 public class CacheResultAspect {
     public static final Map<String, Map<MethodArgs, Object>> CACHE = new ConcurrentHashMap<>();
 
-    @Around("allMarkedCacheResultAnnotation()")
+    @Around("aroundAllMarkedCacheResultAnnotation()")
     public Object aroundAllMarkedCacheResultAnnotationAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         String methodName = proceedingJoinPoint.getSignature().getName();
-        log.info("Annotated with @CacheResult mehod: {}", methodName);
+        log.info("Annotated with @CacheResult method: {}", methodName);
         Map<MethodArgs, Object> methodArgsObjectMap = CACHE.get(methodName);
         if (methodArgsObjectMap != null) {
             log.info("Method with Cache: {}  Cache: {}", methodName, methodArgsObjectMap);
