@@ -11,10 +11,10 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @Aspect
-public class CheckRequest {
+public class CheckRequestAspect {
     @Value("${id-not-process}") private Integer id;
 
-    @Around("annotationCheckRequest()")
+    @Around("annotationCheckRequest(externalInfo)")
     public void annotationCheckRequestWithExternalInfo(ProceedingJoinPoint proceedingJoinPoint, ExternalInfo externalInfo) throws  Throwable {
         log.info("Check request:{} with {}",proceedingJoinPoint.getSignature().toShortString(),externalInfo);
         if(!id.equals(externalInfo.getId())){
