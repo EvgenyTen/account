@@ -1,8 +1,8 @@
-package ru.iteco.account.service;
+package ru.iteco.account.serviceAndMapper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import ru.iteco.account.model.ExternalInfo;
+import ru.iteco.account.modelAndEntity.ExternalInfo;
 
 @Component
 @Slf4j

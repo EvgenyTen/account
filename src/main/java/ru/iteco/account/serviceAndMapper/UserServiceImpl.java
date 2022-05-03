@@ -1,7 +1,7 @@
-package ru.iteco.account.service;
+package ru.iteco.account.serviceAndMapper;
 
 import org.springframework.stereotype.Component;
-import ru.iteco.account.model.UserDto;
+import ru.iteco.account.modelAndEntity.UserDto;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;

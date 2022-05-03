@@ -1,4 +1,4 @@
-package ru.iteco.account.controller;
+package ru.iteco.account.controllerAndRepository;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -6,18 +6,18 @@ import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import ru.iteco.account.model.Create;
-import ru.iteco.account.model.Update;
-import ru.iteco.account.model.UserDto;
-import ru.iteco.account.service.UserService;
+import ru.iteco.account.exceptionsAndValidations.Create;
+import ru.iteco.account.exceptionsAndValidations.Update;
+import ru.iteco.account.modelAndEntity.UserDto;
+import ru.iteco.account.serviceAndMapper.UserService;
 
 import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@Validated
 @RequestMapping("/rest/user")
 public class UserRestController {
+
     private final UserService userService;
 
     public UserRestController(UserService userService) {
@@ -32,8 +32,11 @@ public class UserRestController {
     @GetMapping("/{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable Integer id) {
         UserDto userDto = userService.getById(id);
-        ResponseCookie userid = ResponseCookie.from("userid", userDto.getId().toString()).maxAge(600).build();
-        return ResponseEntity.status(HttpStatus.OK).header(HttpHeaders.SET_COOKIE, userid.toString()).body(userDto);
+        ResponseCookie userId = ResponseCookie.from("userId", userDto.getId().toString()).maxAge(600).secure(true).build();
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .header(HttpHeaders.SET_COOKIE, userId.toString())
+                .body(userDto);
     }
 
     @Validated(Create.class)
@@ -52,4 +55,5 @@ public class UserRestController {
     public void deleteUser(@PathVariable Integer id) {
         userService.delete(id);
     }
+
 }

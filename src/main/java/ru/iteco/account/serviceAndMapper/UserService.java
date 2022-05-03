@@ -1,6 +1,6 @@
-package ru.iteco.account.service;
+package ru.iteco.account.serviceAndMapper;
 
-import ru.iteco.account.model.UserDto;
+import ru.iteco.account.modelAndEntity.UserDto;
 
 import java.util.List;
 

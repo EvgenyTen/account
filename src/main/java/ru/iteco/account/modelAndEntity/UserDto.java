@@ -1,7 +1,9 @@
-package ru.iteco.account.model;
+package ru.iteco.account.modelAndEntity;
 
 import lombok.Builder;
 import lombok.Data;
+import ru.iteco.account.exceptionsAndValidations.Create;
+import ru.iteco.account.exceptionsAndValidations.Update;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -18,4 +20,6 @@ public class UserDto {
     private String name;
     @Email
     private String email;
+
+    private AddressDto address;
 }
